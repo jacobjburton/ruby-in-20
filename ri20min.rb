@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 class MegaGreeter
-    attr_accessor: names
+    attr_accessor :names
 
     # Create the object
     def initialize(names = "World")
@@ -12,7 +12,7 @@ class MegaGreeter
     def say_hi
         if @names.nil?
             puts "..."
-        .elsif @names.respond_to?("each")
+        elsif @names.respond_to?("each")
             # @names is a list of some kind, iterate!
             @names.each do |name|
                 puts "Hello #{name}!"
@@ -43,3 +43,16 @@ if __FILE__ == $0
 
     # Change the name to be "Zeke"
     mg.names = "Zeke"
+    mg.say_hi
+    mg.say_bye
+
+    # Change the name to be an array of names
+    mg.names = ["Albert", "Brenda", "Charles", "Dave", "Engelbert"]
+    mg.say_hi
+    mg.say_bye
+
+    # Change to nil
+    mg.names = nil
+    mg.say_hi
+    mg.say_bye
+end
